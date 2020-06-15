@@ -6,14 +6,14 @@ moment.locale('zh-cn')
 module.exports = {
     title: '酱紫的世界', // 设置网站标题
     // dest: './dist', // 设置输出目录
-    // base: './', // 设置站点根路径
+    base: '/web_sum/', // 设置站点根路径
     // repo: 'https://ipv7.gitee.io/vuepress/docs', // 添加 github 链接
     head: [
         ['link', { rel: 'icon', href: '/assets/img/logo.png' }],
         ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }] //移动端搜索优化
     ],
     publish: true,
-    // theme: 'reco',
+    theme: 'reco',
     description: ' ', // meta 首页 中的描述文字，用于SEO
     // 插件
     plugins: [
@@ -46,11 +46,9 @@ module.exports = {
         ['reading-progress'] // 阅读进度条
     ],
     themeConfig: {
+        noFoundPageByTencent: false,
         // collapsable: true, // 可选的, 默认值是 true,
-        // displayAllHeaders: false,
         sidebarDepth: 2,
-        // heroImage: '/assets/img/bg.png',
-        // bgImage: '/assets/img/bg.png',
         // type: 'blog',
         lastUpdated: '最后更新时间', // string | boolean
         authorAvatar: '/assets/img/logo.png', // 设置头像右边
@@ -71,45 +69,78 @@ module.exports = {
                 logo: "https://gitee.com/static/images/logo-black.svg?t=158106664",
                 link: 'https://gitee.com/'
             }
-            // ...
         ],
         logo: '/assets/img/logo.png',
         nav: [
             { text: '首页', link: '/' },
-            { text: '时间轴', link: '/timeline/', icon: 'reco-date' },
-            { text: '学习', link: '/study/', target: '_self', icon: 'reco-linkedin' },
-            // { text: '工具', link: '/tools/' },
+            // {
+            //     text: '前端基础',
+            //     icon: 'reco-linkedin',
+            //     ariaLabel: 'Language Menu',
+            //     items: [{
+            //             text: 'html',
+            //             link: "/html/"
+            //         },
+            //         {
+            //             text: 'css',
+            //             link: "/css/"
+            //         },
+            //         {
+            //             text: 'js',
+            //             link: "/js/"
+            //         },
+            //         {
+            //             text: 'jquery',
+            //             link: "/jquery/"
+            //         },
+            //         {
+            //             text: 'regexp',
+            //             link: "/regexp/"
+            //         },
+            //         {
+            //             text: 'ajax',
+            //             link: "/ajax/"
+            //         }
+            //     ]
+            // },
+            // { text: '时间轴', link: '/timeline/', icon: 'reco-date' },
+            // { text: '学习', link: '/study/', target: '_self', icon: 'reco-linkedin' },
+            // {
+            //     text: '前端高级',
+            //     icon: 'reco-linkedin',
+            //     ariaLabel: 'Language Menu',
+            //     items: [{
+            //             text: 'nodejs',
+            //             link: "/nodejs/"
+            //         }, {
+            //             text: 'es6',
+            //             link: "/es6/"
+            //         },
+            //         {
+            //             text: 'webapi',
+            //             link: "/webapi/"
+            //         },
+            //         {
+            //             text: 'canvas',
+            //             link: "/canvas/"
+            //         }
+            //     ]
+            // },
             {
                 text: '工具',
                 ariaLabel: 'Language Menu',
                 items: [
                     { text: '浏览器同步测试工具', link: '/tools/浏览器同步测试工具/' },
                     { text: '正则表达式', link: '/regexp/正则表达式/' },
+                    { text: 'ps', link: "/ps/ps的基本使用和切图" },
                 ]
             },
-            // {
-            //     text: '前端',
-            //     ariaLabel: 'Language Menu',
-            //     items: [
-            //         {
-            //             text: 'html',
-            //             items: [{
-            //                 text: '01-前言&WEB标准',
-            //                 link: '/html/01-前言&WEB标准'
-            //             }, {
-            //                 text: '02-HTML标签',
-            //                 link: '/html/02-HTML标签'
-            //             }]
-            //         }
-            //     ]
-            // },
         ],
         sidebar: {
-            '/css/': ['/', '1.CSS初始以及选择器', '2.CSS复合选择器', '3.CSS文字文本样式', '4.显示模式', '5.三大特性', '6.背景', '7.盒子模型', '8.清除浮动', '9.CSS高级技巧', '10.定位讲义'],
-            '/html/': ['/', '01-前言-WEB标准', '02-HTML标签'],
+            '/css/': ['1.CSS初始以及选择器', '2.CSS复合选择器', '3.CSS文字文本样式', '4.显示模式', '5.三大特性', '6.背景', '7.盒子模型', '8.清除浮动', '9.CSS高级技巧', '10.定位讲义'],
+            '/html/': ['01-前言-WEB标准', '02-HTML标签'],
             '/ps/': ['ps的基本使用和切图'],
             '/js/': [
-                '/',
                 '01-JS基础',
                 '02-JS基础',
                 '03-JS基础',
@@ -166,7 +197,6 @@ module.exports = {
                 '02-ajax'
             ],
             '/tools/': [
-                '/',
                 "浏览器同步测试工具",
             ],
             '/canvas/': [
@@ -182,13 +212,12 @@ module.exports = {
         // cyberSecurityLink: '公安部备案指向链接',
         // 项目开始时间，只填写年份
         startYear: '2020',
-
         mode: 'light', //默认显示白天模式
         // 评论设置
-        // valineConfig: {
-        //     appId: process.env.LEANCLOUD_APP_ID,
-        //     appKey: process.env.LEANCLOUD_APP_KEY,
-        // }
+        valineConfig: {
+            appId: process.env.LEANCLOUD_APP_ID,
+            appKey: process.env.LEANCLOUD_APP_KEY,
+        }
 
     },
     markdown: {
@@ -196,6 +225,5 @@ module.exports = {
     },
     // 搜索设置
     search: true,
-    searchMaxSuggestions: 10,
-
+    searchMaxSuggestions: 16,
 }

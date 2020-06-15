@@ -2,5 +2,4 @@
 node_module
 /node_modules/*
 /LICENSE
-# /package.json
 /yarn.lock

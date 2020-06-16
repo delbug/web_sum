@@ -17,6 +17,18 @@ module.exports = {
     description: ' ', // meta 首页 中的描述文字，用于SEO
     // 插件
     plugins: [
+        [
+            'vuepress-plugin-comment',
+            {
+                choosen: 'valine',
+                // options选项中的所有参数，会传给Valine的配置
+                options: {
+                    el: '#valine-vuepress-comment',
+                    appId: '3L1fpObjz755gChYukdN6DYE-gzGzoHsz',
+                    appKey: '1tnWDx6OEre8iXr65lndUhFW'
+                }
+            }
+        ],
         ["vuepress-plugin-boxx"], // 随机名言
         [
             "dynamic-title",
@@ -28,27 +40,40 @@ module.exports = {
                 recoverTime: 2000
             }
         ],
+        // [ // 音乐插件
+        //     'meting', {
+        //         metingApi,
+        //         meting: {
+        //             server: "netease",
+        //             type: "playlist",
+        //             mid: "2539599584",
+        //         },
+        //         aplayer: {
+        //             lrcType: 3
+        //         },
+        //         mobile
+        //     }
+        // ]
         [
             "ribbon",
             {
-                size: 90, // width of the ribbon, default: 90
+                size: 60, // width of the ribbon, default: 90
                 opacity: 0.3, // opacity of the ribbon, default: 0.3
                 zIndex: -1 // z-index property of the background, default: -1
             }
         ],
-        ['@vuepress/medium-zoom', {
-            selector: 'img.zoom-custom-imgs',
-            // medium-zoom options here
-            // See: https://github.com/francoischalifour/medium-zoom#options
-            options: {
-                margin: 16
-            }
-        }],
+        // ['@vuepress/medium-zoom', {
+        //     selector: 'img.zoom-custom-imgs',
+        //     options: {
+        //         margin: 16
+        //     }
+        // }],
+        ['@vuepress/medium-zoom'],
         [
             "cursor-effects",
             {
                 size: 2, // size of the particle, default: 2
-                shape: ['star' | 'circle'], // shape of the particle, default: 'star'
+                shape: ['circle'], // shape of the particle, default: 'star'
                 zIndex: 999999999 // z-index property of the canvas, default: 999999999
             }
         ],
@@ -84,6 +109,7 @@ module.exports = {
         ['@vuepress/nprogress'], // 加载进度条
         ['reading-progress'] // 阅读进度条
     ],
+
     themeConfig: {
         noFoundPageByTencent: false,
         // collapsable: true, // 可选的, 默认值是 true,
@@ -113,6 +139,7 @@ module.exports = {
         logo: '/assets/img/logo.png',
         nav: [
             { text: '首页', link: '/' },
+            { text: '时间轴', link: '/timeLine/', icon: 'reco-date' },
             {
                 text: '工具',
                 ariaLabel: 'Language Menu',
@@ -201,10 +228,12 @@ module.exports = {
         startYear: '2020',
         mode: 'light', //默认显示白天模式
         // 评论设置
-        valineConfig: {
-            appId: process.env.LEANCLOUD_APP_ID,
-            appKey: process.env.LEANCLOUD_APP_KEY,
-        }
+        // valineConfig: {
+        //     // appId: process.env.LEANCLOUD_APP_ID,
+        //     // appKey: process.env.LEANCLOUD_APP_KEY,
+        //     appId: '3L1fpObjz755gChYukdN6DYE-gzGzoHsz',
+        //     appKey: "1tnWDx6OEre8iXr65lndUhFW",
+        // },
 
     },
     markdown: {

@@ -1,6 +1,6 @@
 <template>
   <div id="clock" class="wrap">
-    <div class="clock">啊啊啊
+    <div class="clock">
       <div class="hour" ref="hh"></div>
       <div class="min" ref="mm"></div>
       <div class="sec" ref="ss"></div>
@@ -50,8 +50,8 @@ export default {
   width: 350px;
   height: 350px;
   background: #fff;
-  border: 20px solid #fff;
-  border-radius: 50%;
+  border: 20px solid #eee;
+  border-radius: 20%;
   box-shadow: inset 0 0 20px #666;
   background-image: url('img/clock.jpg');
   background-size: cover;
@@ -64,10 +64,10 @@ export default {
 
 .clock::before {
   content: '';
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
   background: #fff;
-  border-radius: 50%;
+  // border-radius: 50%;
   z-index: 99;
 }
 

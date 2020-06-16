@@ -12,7 +12,6 @@ publish: true
 
 # webAPIs-day01
 
-vip_lipenglei
 
 ## 核心知识点
 

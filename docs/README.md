@@ -90,7 +90,7 @@ footer: MIT Licensed | Copyright © 2018-present Evan You
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 200px;
+    /* height: 200px; */
     min-height: 10vh;
     background: transparent none repeat scroll!important;
     position: fixed;
@@ -100,26 +100,29 @@ footer: MIT Licensed | Copyright © 2018-present Evan You
 
 @media screen and (min-width: 960px){
   .clock {
-    margin-top: -65% 
+    margin-top: -50% 
   }
 }
 
 @media screen and (min-width: 720px) and  (max-width: 959px){
   .clock {
-    margin-top: -70%
-  }
-}
-@media screen and (min-width: 600px) and  (max-width: 719px){
-  .clock {
-    margin-top: -100%
+    margin-top: -50%
   }
 }
 
-@media screen and (min-width: 481px) and  (max-width: 699px) {
+@media screen and (min-width: 600px) and  (max-width: 719px){
   .clock {
-    margin-top: -100%
+    margin-top: -80%
   }
 }
+
+
+@media screen and (min-width: 481px) and  (max-width:600px) {
+  .clock {
+    margin-top: -70%
+  }
+}
+
 
 
 /* @media screen and (min-width: 481px) and (max-width: 959px) {} */
@@ -134,29 +137,35 @@ footer: MIT Licensed | Copyright © 2018-present Evan You
 
 @media screen and (min-width: 440px) and (max-width: 480px)  {
   .wrap {
-    top:-190%;
-    transform: scale(0.68,0.58);
+    transform: scale(0.6);
+  }
+   .clock {
+    margin-top: -110%
   }
 }
 
 @media screen and (min-width: 400px) and (max-width: 440px)  {
-  .wrap {
-    top:-140%;
-    transform: scale(0.68,0.58);
+   .wrap {
+    transform: scale(0.6);
+  }
+  .clock {
+  margin-top: -66%
   }
 }
 
 @media screen and (min-width: 360px) and (max-width: 400px)  {
   .wrap {
-    top:-120%;
-    transform: scale(0.68,0.58);
+    transform: scale(0.5);
+  }
+  .clock {
+  margin-top: -40%
   }
 }
 
 @media screen and (max-width: 360px){
   .wrap {
-    top:-130%;
-    transform: scale(0.68,0.58);
+    /* top:-130%; */
+    transform: scale(0.5);
   }
   .home img {    
     margin: 24% auto -6% auto !important;
@@ -170,22 +179,12 @@ footer: MIT Licensed | Copyright © 2018-present Evan You
     margin-left: 0px;
   }
   .clock {
-    margin-top: 0%;
+    margin-top: -40%;
     background: rgba(0, 0, 255, 0) none repeat scroll !important;
     background-image: url() !important;
   }
 }
 
-@media screen and (max-width: 359px){
-	  .wrap {
-    top:-120%;
-    transform: scale(0.68,0.58);
-  	}
-	 .clock {
-		background: rgba(0, 0, 255, 0) none repeat scroll !important;
-    	background-image: url() !important;
-	 }
-}
 .clock {
   transition: all 2s;
 }
@@ -201,4 +200,7 @@ footer: MIT Licensed | Copyright © 2018-present Evan You
   transition: all 2s;
 }
 
+/* .home .hero .action-button , .action {
+  z-index: 999999  !important;
+} */
 </style>

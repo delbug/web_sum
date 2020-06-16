@@ -155,7 +155,7 @@ footer: MIT Licensed | Copyright © 2018-present Evan You
 
 @media screen and (max-width: 360px){
   .wrap {
-    top:-190%;
+    top:-130%;
     transform: scale(0.68,0.58);
   }
   .home img {    

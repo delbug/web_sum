@@ -24,6 +24,6 @@ git commit -m 'deploy'
 
 git push -f git@github.com:delbug/web_sum.git master:gh-pages 
 
-
+# 把 "deploy": "bash deploy.sh" 放入 package.json里面后，在根目录执行 yarn deploy ，把代码部署到GitHub上
 
 cd -

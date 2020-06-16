@@ -6,8 +6,8 @@ moment.locale('zh-cn')
 module.exports = {
     title: '酱紫的世界', // 设置网站标题
     // dest: './dist', // 设置输出目录
-    base: '/web_sum/', // 设置站点根路径
-    // repo: 'https://ipv7.gitee.io/vuepress/docs', // 添加 github 链接
+    base: '/web_sum/', // 设置站点根路径 (和github命令的名称要一样)
+    repo: 'https://github.com/delbug/web_sum.git', // 添加 github 链接
     head: [
         ['link', { rel: 'icon', href: '/assets/img/logo.png' }],
         ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }] //移动端搜索优化
@@ -17,10 +17,49 @@ module.exports = {
     description: ' ', // meta 首页 中的描述文字，用于SEO
     // 插件
     plugins: [
+        ["vuepress-plugin-boxx"], // 随机名言
+        [
+            "dynamic-title",
+            {
+                // showIcon: "/favicon.ico",
+                showText: "(/≧▽≦/)咦！又好了！",
+                hideIcon: "/failure.ico",
+                hideText: "(●—●)喔哟，崩溃啦！",
+                recoverTime: 2000
+            }
+        ],
+        [
+            "ribbon",
+            {
+                size: 90, // width of the ribbon, default: 90
+                opacity: 0.3, // opacity of the ribbon, default: 0.3
+                zIndex: -1 // z-index property of the background, default: -1
+            }
+        ],
+        ['@vuepress/medium-zoom', {
+            selector: 'img.zoom-custom-imgs',
+            // medium-zoom options here
+            // See: https://github.com/francoischalifour/medium-zoom#options
+            options: {
+                margin: 16
+            }
+        }],
+        [
+            "cursor-effects",
+            {
+                size: 2, // size of the particle, default: 2
+                shape: ['star' | 'circle'], // shape of the particle, default: 'star'
+                zIndex: 999999999 // z-index property of the canvas, default: 999999999
+            }
+        ],
         ['flowchart'], // 支持流程图
         [
             '@vuepress-reco/vuepress-plugin-bgm-player', // BGM播放器
             {
+                autoShrink: "true",
+                floatPosition: 'right',
+                shrinkMode: 'float',
+                floatStyle: { bottom: '2%', 'z-index': '999999', width: '50px', height: '50px' },
                 audios: [
                     { name: 'Faster Than Light', artist: 'Andreas Waldetoft / Mia Stegmar', url: 'https://cdn-image.tsanfer.xyz/music/Andreas%20Waldetoft%2CMia%20Stegmar%20-%20Faster%20Than%20Light.mp3', cover: 'https://p1.music.126.net/Gxv6d9W4Yd9q9WNHPpi8rw==/1379887104073348.jpg' },
                     { name: 'Dawn', artist: 'DDRKirby(ISQ)', url: 'https://cdn-image.tsanfer.xyz/music/Dawn%20-%20DDRKirby%28ISQ%29.mp3', cover: 'https://p2.music.126.net/IPnqMCk8YaN9inwYV2bdgQ==/18774161044446693.jpg' },
@@ -54,6 +93,7 @@ module.exports = {
         authorAvatar: '/assets/img/logo.png', // 设置头像右边
         blogConfig: {
             category: {
+                icon: 'reco-linkedin',
                 location: 2, // 在导航栏菜单中所占的位置，默认2
                 text: '前端' // 默认文案 “分类”
             },
@@ -73,59 +113,6 @@ module.exports = {
         logo: '/assets/img/logo.png',
         nav: [
             { text: '首页', link: '/' },
-            // {
-            //     text: '前端基础',
-            //     icon: 'reco-linkedin',
-            //     ariaLabel: 'Language Menu',
-            //     items: [{
-            //             text: 'html',
-            //             link: "/html/"
-            //         },
-            //         {
-            //             text: 'css',
-            //             link: "/css/"
-            //         },
-            //         {
-            //             text: 'js',
-            //             link: "/js/"
-            //         },
-            //         {
-            //             text: 'jquery',
-            //             link: "/jquery/"
-            //         },
-            //         {
-            //             text: 'regexp',
-            //             link: "/regexp/"
-            //         },
-            //         {
-            //             text: 'ajax',
-            //             link: "/ajax/"
-            //         }
-            //     ]
-            // },
-            // { text: '时间轴', link: '/timeline/', icon: 'reco-date' },
-            // { text: '学习', link: '/study/', target: '_self', icon: 'reco-linkedin' },
-            // {
-            //     text: '前端高级',
-            //     icon: 'reco-linkedin',
-            //     ariaLabel: 'Language Menu',
-            //     items: [{
-            //             text: 'nodejs',
-            //             link: "/nodejs/"
-            //         }, {
-            //             text: 'es6',
-            //             link: "/es6/"
-            //         },
-            //         {
-            //             text: 'webapi',
-            //             link: "/webapi/"
-            //         },
-            //         {
-            //             text: 'canvas',
-            //             link: "/canvas/"
-            //         }
-            //     ]
-            // },
             {
                 text: '工具',
                 ariaLabel: 'Language Menu',
